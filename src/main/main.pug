@@ -1,0 +1,12 @@
+extends ../base/base
+
+block content
+    .wrapper 
+        main.index 
+            .container 
+                .index__content
+                    each accordion in accordionData 
+                        button(class=accordion[1]).index__accordion.accordion #{accordion[0]}
+                        .accordion__panel(class=accordion[1])
+                            each i in accordion[2]
+                                a(href=i[1]).accordion__link #{i[0]}

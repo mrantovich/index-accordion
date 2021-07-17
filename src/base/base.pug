@@ -1,0 +1,28 @@
+block variables
+    - pageTitle = "Index Accordion"
+
+    - linksFirstSection = [["Facebook", "https://facebook.com"],["YouTube", "https://youtube.com"]]
+    - linksSecondSection = [["RusCorpora", "https://ruscorpora.ru"], ["Академик", "https://dic.academic.ru/"], ["Грамота", "http://new.gramota.ru/"], ["Орфоэпия", "http://povto.ru/pr_udar.htm"], ["Слэнг", "https://teenslang.su/"]]
+    - linksThirdSection = [["CSSBattle", "https://cssbattle.dev/"], ["CSSDiner", "https://flukeout.github.io/"], ["CSS Challenges", "https://css-challenges.com/"], ["FCC", "https://www.freecodecamp.org/learn"], ["CodeWars", "https://www.codewars.com/dashboard"]]
+    - linksFourthSection = [["ЖЗ", "https://magazines.gorky.media"], ["Новый мир", "http://www.nm1925.ru/"], ["Формаслов", "https://formasloff.ru/"], ["Лиterraтура", "https://literratura.org/"], ["Prosodia", "https://prosodia.ru/"]]
+    - linksFifthSection = [["LOR", "https://linux.org.ru"], ["Fedora FAQ", "https://russianfedora.github.io/FAQ/"], ["COPR", "https://copr.fedorainfracloud.org/coprs/"], ["GitHub", "https://githu.com/mrantovich"], ["DNF Docs", "https://dnf.readthedocs.io/en/latest/command_ref.html"]]
+
+    - sectionFirst = ["Social", "bg-first", linksFirstSection]
+    - sectionSecond = ["Русский язык", "bg-second", linksSecondSection]
+    - sectionThird = ["Code Challenges", "bg-third", linksThirdSection]
+    - sectionFourth = ["Журналы", "bg-fourth", linksFourthSection]
+    - fifthSection = ["Linux", "bg-fifth", linksFifthSection]
+
+    - accordionData = [sectionFirst, sectionSecond, sectionThird, sectionFourth, fifthSection]
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="styleshee", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap")
+        link(rel="stylesheet", href="../../css/style.css")
+        title=pageTitle
+    body 
+        block content

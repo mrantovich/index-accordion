@@ -1,0 +1,132 @@
+@import 'nullstyle';
+@import 'colors';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: $main-bg-color;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.index {
+    padding: 40px 0;
+    &__content {
+    }
+
+    &__accordion {}
+}
+
+.accordion {
+    width: 100%;
+    padding: 12px 5px;
+    outline: none;
+    color: $accordion-title-color;
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+
+    &::before {
+        content: '';
+        background: $accordion-title-color;
+        width: 12px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%) rotate(45deg);
+        transition: 0.3s;
+    }
+    &::after {
+        content: '';
+        background: $accordion-title-color;
+        width: 12px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: 0.3s;
+    }
+
+    &._active {
+        //box-shadow: 0 2px 4px 0 #000;
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__panel {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 15px;
+        max-height: 0;
+        transition: 0.3s;
+        //background: $panel-bg-color;
+        background: $accordion-1-bg-color;
+
+        &._active {
+            padding: 35px 15px 45px 15px;
+            position: relative;
+
+            &:before {
+                content: '';
+                background: $accordion-title-color;
+                width: 30%;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__link {
+        padding: 5px 15px;
+        font-size: 16px;
+        color: $accordion-title-color;
+        border: 1px solid $accordion-title-color;
+        border-radius: 16px;
+        transition: 0.3s;
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accordion-1-bg-color;
+                background: $accordion-title-color;
+            }
+        }
+    }
+}
+
+.bg-first {
+    background: $accordion-1-bg-color;
+}
+.bg-second {
+    background: $accordion-2-bg-color;
+}
+.bg-third {
+    background: $accordion-3-bg-color;
+}
+.bg-fourth {
+    background: $accordion-4-bg-color;
+}
+.bg-fifth {
+    background: $accordion-5-bg-color;
+}
