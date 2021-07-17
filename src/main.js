@@ -12,7 +12,11 @@ for (i = 0; i < accordionElements.length; i++) {
             panel.style.maxHeight = null;
         } else {
             panel.classList.add('_active');
-            panel.style.maxHeight = panel.scrollHeight + 'px';
+            if (window.matchMedia('(max-width: 768px')) {
+                panel.style.maxHeight = '400px';
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
         };
     });
 };

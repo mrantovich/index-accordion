@@ -1,24 +1,29 @@
 @import 'nullstyle';
 @import 'colors';
 
-body {
+html, body {
     font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
     width: 100%;
     height: 100%;
-    background-color: $main-bg-color;
+    overflow-x: hidden;
 }
 
 .container {
+    height: 100%;
     max-width: 1200px;
     padding: 0 30px;
     margin: 0 auto;
 }
 
 .index {
+    background-color: $main-bg-color;
+    min-height: 100vh;
+    height: auto;
     padding: 40px 0;
+
     &__content {
     }
 
@@ -94,17 +99,27 @@ body {
                 transform: translateX(-50%);
             }
         }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 
     &__link {
-        padding: 5px 15px;
-        font-size: 16px;
+        padding: 10px 45px;
+        font-size: 20px;
         color: $accordion-title-color;
         border: 1px solid $accordion-title-color;
         border-radius: 16px;
         transition: 0.3s;
         &:not(:last-child) {
-            margin-right: 15px;
+            margin: 0 0 18px 0;
+        }
+        @media (min-width: 768px) {
+            padding: 5px 15px;
+            &:not(:last-child) {
+                margin: 0 15px 0 0;
+            }
         }
         @media (any-hover: hover) {
             &:hover {
