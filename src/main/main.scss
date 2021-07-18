@@ -12,16 +12,16 @@ html, body {
 }
 
 .container {
-    height: 100%;
+    flex-grow: 1;
     max-width: 1200px;
     padding: 0 30px;
     margin: 0 auto;
 }
 
 .index {
+    display: flex;
     background-color: $main-bg-color;
     padding: 40px 0;
-    overflow: auto;
 
     &__content {
     }
